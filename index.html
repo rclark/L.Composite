@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+    <![endif]-->
+    
+    <style type="text/css">
+      html, body, #map {
+        height: 100%;
+        width: 100%;
+        margin: 0px;
+      }
+      
+      /*
+      .composite-data-layer path {
+        stroke-opacity: 0;
+      }
+      */
+      
+      .composite-data-layer path:hover {
+        stroke-opacity: 1;
+        stroke-width: 3px; 
+        stroke: red;
+      }
+    </style>
+    
+    <!--
+      L.Composite dependencies:
+        - [Leaflet](http://leafletjs.com)
+        - [JSTS](https://github.com/bjornharrtell/jsts)
+        - [jQuery](http://jquery.com)
+    -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script src="https://rawgithub.com/bjornharrtell/jsts/master/lib/javascript.util.js"></script>
+    <script src="https://rawgithub.com/bjornharrtell/jsts/master/lib/jsts.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    
+    <script src="L.Composite.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map = L.map("map", {
+        center: [34, -111],
+        zoom: 10 
+      });
+      
+      L.composite({
+        tileUrl: 'http://{s}.tiles.mapbox.com/v3/rclark.map-d4ubicoz/{z}/{x}/{y}.png',
+        geojsonUrl: 'https://api.github.com/repos/azgs/geologic-map-of-arizona/git/blobs/410a8abcc1fddd4142952d21e395b6f0bbd1259e'
+      }).addTo(map);
+      
+    </script>
+  </body>
+</html>
