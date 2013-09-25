@@ -21,3 +21,14 @@ The `L.TileLayer` will show up immediately, giving your page a quick, pretty fac
 Once the GeoJSON is returned, [JSTS](https://github.com/bjornharrtell/jsts) is used to create a spatial index of the GeoJSON features. Now, as your cursor moves across the map, the index is searched and the features under your cursor are added to an `L.GeoJSON` layer on the map.
 
 The `L.GeoJSON` layer never has more than a few features in it at a time, and so the page remains performant, but you can do things like hover effects, popups, etc.
+
+## It has a couple of dependencies
+- [JSTS](https://github.com/bjornharrtell/jsts) for building a spatial index and doing intersections
+- [jQuery](http://jquery.com) for making AJAX requests
+- [Leaflet](http://leafletjs.com) for mapping
+
+## This example...
+
+`index.html`: Loads a pretty large polygon dataset from Github representing rock types across the state of Arizona. Once they're loaded, you'll see a "hover" event where the polygon under your cursor is highlighted.
+
+You can look at it at http://rclark.github.io/L.Composite/
