@@ -4,7 +4,7 @@ A Leaflet layer that brings together an `L.TileLayer` and an `L.GeoJSON` layer.
 
 ## The problem:
 
-Making an interactive web map becomes difficult if your dataset is very large. Instead of using the browser to render data as vector features, we often instead pre-render images and display those pre-rendered images instead of the data iteself. This allows for quick maps, and for pretty visualization, but no interaction.
+Making an interactive web map becomes difficult if your dataset is very large. Instead of using the browser to render data as vector features, we often instead pre-render images and display those pre-rendered images instead of the data itself. This allows for quick maps, and for pretty visualization, but no interaction.
 
 When you load massive amounts of vector data into the browser, the page takes forever to load and then the performance is terrible.
 
